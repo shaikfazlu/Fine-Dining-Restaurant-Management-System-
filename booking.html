@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Book Your Stay - Fictional Fine Dining Restaurant Mahal</title>
+<style>
+/* General styling for the body */
+body {
+  font-family: 'Poppins', sans-serif;
+  background-image: url("pay.jpeg");
+  background-size: cover;
+  background-position: center;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  color: #333;
+  position: relative;
+}
+
+/* Gradient overlay to make the text stand out */
+body::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: -1;
+}
+
+.container {
+  width: 100%;
+  max-width: 500px;
+  margin: 50px auto;
+  padding: 30px;
+  background: rgba(255, 255, 255, 0.2); /* Semi-transparent background */
+  backdrop-filter: blur(10px); /* Blurred background effect */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  border-radius: 15px;
+  transition: background 0.3s;
+}
+
+.container:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+/* Enhanced headings */
+h2 {
+  text-align: center;
+  color: #ffffff;
+  font-size: 28px;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+  color: #ffffff;
+  font-size: 16px;
+}
+
+/* Input fields with blurred and semi-transparent effect */
+input[type="text"], input[type="number"], input[type="date"], input[type="email"], select {
+  width: calc(100% - 20px);
+  padding: 12px;
+  margin-bottom: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 5px;
+  font-size: 16px;
+  color: #fff;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(6px);
+  transition: border-color 0.3s, box-shadow 0.3s, background-color 0.3s;
+}
+
+/* Placeholder styling for better visibility */
+input::placeholder {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+select {
+  color: #fff;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+input:focus, select:focus {
+  border-color: #ffffff;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
+  background-color: rgba(255, 255, 255, 0.2);
+  outline: none;
+}
+
+select option {
+  color: #333;
+}
+
+button {
+  width: 100%;
+  padding: 15px;
+  background-color: #ffffff;
+  color: #003366;
+  border: none;
+  border-radius: 5px;
+  font-size: 18px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+button:hover {
+  background-color: #f1f1f1;
+  transform: scale(1.05);
+}
+
+button:active {
+  background-color: #e0e0e0;
+  transform: scale(1);
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+  <h2>Book Your Stay</h2>
+  <form action="booking.php" method="post">
+    <label for="name">Full Name:</label>
+    <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" placeholder="Enter your email" required>
+
+    <label for="phone">Phone Number:</label>
+    <input type="text" id="phone" name="phone" placeholder="Enter your phone number" required>
+
+    <label for="room">Select Room Type:</label>
+    <select id="room" name="room" required>
+      <option value="deluxe">Deluxe Room</option>
+      <option value="superior">Superior Room</option>
+      <option value="suite">Suite</option>
+    </select>
+
+    <label for="checkin">Check-in Date:</label>
+    <input type="date" id="checkin" name="checkin" required>
+
+    <label for="checkout">Check-out Date:</label>
+    <input type="date" id="checkout" name="checkout" required>
+
+    <label for="guests">Number of Guests:</label>
+    <input type="number" id="guests" name="guests" min="1" max="10" required>
+
+    <button type="submit">Submit Booking</button>
+  </form>
+</div>
+
+</body>
+</html>

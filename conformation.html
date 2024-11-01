@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Booking Confirmation</title>
+<style>
+body {
+  font-family: Arial, sans-serif;
+  background: url("thankyou.jpeg") no-repeat center center fixed;
+  background-size: cover;
+  margin: 0;
+  padding: 0;
+  color: #333;
+}
+
+.container {
+  max-width: 600px;
+  margin: 50px auto;
+  background: rgba(255, 255, 255, 0.8);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+  text-align: center;
+  color: #333;
+}
+
+p {
+  text-align: center;
+  font-size: 18px;
+}
+
+.cta-button {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  background-color: #007BFF;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  margin-top: 20px;
+}
+
+.cta-button:hover {
+  background-color: #0056b3;
+}
+
+footer {
+  text-align: center;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.8);
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+</style>
+</head>
+<body>
+<!-- Confirmation Message -->
+<section class="confirmation">
+  <div class="container">
+    <h2>Booking Confirmation</h2>
+    <p id="message">Your booking has been successfully completed. Thank you for choosing our service!</p>
+    <button type="button" class="cta-button" id="submit-button" onclick="window.location.href='index.html'">Back to Home</button>
+  </div>
+</section>
+
+<script>
+  // You can replace this part with actual logic to display success or failure message
+  const queryString = window.location.search;
+  const urlParams = new URLSearchParams(queryString);
+  const success = urlParams.get('success');
+
+  if(success === 'false') {
+    document.getElementById('message').textContent = 'Unfortunately, your payment was not successful. Please try again.';
+  }
+</script>
+</body>
+</html>

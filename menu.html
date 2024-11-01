@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fictional Fine Dining Restaurant - Mahal Hotel</title>
+<style>
+body {
+  font-family: 'Georgia', serif;
+  background: url("menu\ image.jpeg") no-repeat center center fixed;
+  background-size: cover;
+  margin: 0;
+  padding: 0;
+  color: #4A4A4A;
+}
+
+.navbar {
+  overflow: hidden;
+  background-color: #333;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+.navbar a {
+  float: left;
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 20px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.navbar a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 70px auto; /* Adjust margin for navbar */
+  background: rgba(255, 255, 255, 0.8);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1, h2, h3, p {
+  text-align: center;
+}
+
+h1 {
+  font-size: 48px;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+h2 {
+  font-size: 36px;
+  margin-bottom: 20px;
+  color: #555;
+}
+
+h3 {
+  font-size: 28px;
+  margin-bottom: 10px;
+  color: #777;
+}
+
+p {
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+.cta-button, .book-button {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #8B0000;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 18px;
+  margin-top: 20px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.cta-button:hover, .book-button:hover {
+  background-color: #600000;
+}
+
+.room-grid, .service-grid, .testimonial-grid {
+  display: flex;
+  gap: 30px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 30px;
+}
+
+.room, .service, .testimonial {
+  background: white;
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  flex: 1 1 calc(33.333% - 60px);
+  box-sizing: border-box;
+  max-width: calc(33.333% - 60px);
+  margin: 15px 0;
+}
+
+.room img, .service-item img {
+  max-width: 100%;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+@media (max-width: 768px) {
+  .room, .service, .testimonial {
+    flex: 1 1 calc(50% - 40px);
+    max-width: calc(50% - 40px);
+  }
+}
+
+@media (max-width: 480px) {
+  .room, .service, .testimonial {
+    flex: 1 1 calc(100% - 30px);
+    max-width: calc(100% - 30px);
+  }
+}
+
+footer {
+  text-align: center;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.9);
+  border-top: 1px solid #e5e5e5;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+  margin-top: 30px;
+}
+
+.price {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 10px;
+}
+
+.price span {
+  font-size: 16px;
+}
+
+.price .seasonal {
+  color: #8B0000;
+}
+
+.price .non-seasonal {
+  color: #006400;
+}
+
+img.service-grid {
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+img.bkf{
+  margin-left:22%;
+}
+img.gm{
+  margin-left:22%;
+}
+img.spa{
+  margin-left:22%;
+}
+img.pl{
+  margin-left:22%;
+}
+img.wf{
+  margin-left:22%;
+}
+
+.service-item {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin: 10px 0;
+  width: 100%;
+  max-width: 500px;
+}
+
+.service-item h3 {
+  margin-top: 0;
+}
+
+.contact-info {
+  text-align: center;
+  margin-top: 30px;
+}
+
+.contact-info p {
+  font-size: 18px;
+  margin: 10px 0;
+}
+
+.contact-info .address, .contact-info .phone, .contact-info .email {
+  margin: 10px 0;
+}
+</style>
+</head>
+<body>
+
+<!-- Navbar -->
+<div class="navbar">
+  <a href="index.html">Home</a>
+  <a href="#rooms">Rooms</a>
+  <a href="#services">Services</a>
+  <a href="#testimonials">Testimonials</a>
+  <a href="#contact">Contact</a>
+</div>
+
+<!-- Hero Section -->
+<section id="hero" class="hero">
+  <div class="container">
+    <h1>WELCOME TO FICTIONAL FINE DINING RESTAURANT MAHAL</h1>
+    <p>Experience the best stay at the best price</p>
+  </div>
+</section>
+
+<!-- Featured Rooms -->
+<section id="rooms" class="featured-rooms">
+  <div class="container">
+    <h2>FICTIONAL FINE DINING RESTAURANT ROOMS</h2>
+    <div class="room-grid">
+      <div class="room">
+        <h3>Deluxe Rooms</h3>
+        <img src="deluxe.jpeg" width="600px" height="300px" alt="Deluxe Room">
+        <div class="price">
+          <span class="seasonal">Seasonal: 17000 per night</span>
+          <span class="non-seasonal">Non-Seasonal: 15000 per night</span>
+        </div>
+        <a href="booking.html" class="book-button">Book Now</a>
+      </div>
+
+      <div class="room">
+        <h3>Superior Room</h3>
+        <img src="super.jpeg" width="600px" height="300px" alt="Superior Room">
+        <div class="price">
+          <span class="seasonal">Seasonal: 12000 per night</span>
+          <span class="non-seasonal">Non-Seasonal: 10000 per night</span>
+        </div>
+        <a href="booking.html" class="book-button">Book Now</a>
+      </div>
+
+      <div class="room">
+        <h3>Suite</h3>
+        <img src="suite.jpeg" width="600px" height="300px" alt="Suite">
+        <div class="price">
+          <span class="seasonal">Seasonal: 18000 per night</span>
+          <span class="non-seasonal">Non-Seasonal: 15000 per night</span>
+        </div>
+        <a href="booking.html" class="book-button">Book Now</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Services -->
+<section id="services" class="services">
+  <div class="container">
+    <h2>Our Services</h2>
+    <div class="service-grid">
+      <div class="service-item">
+        <img src="breakfast.jpeg" class="bkf" alt="Complimentary Breakfast">
+        <h3>Complimentary Breakfast</h3>
+        <p>Enjoy a delicious breakfast included with your stay.</p>
+      </div>
+      <div class="service-item">
+        <img src="gym.jpeg" class="gm" alt="Gym">
+        <h3>Gym</h3>
+        <p>Stay fit with our fully equipped gym facilities.</p>
+      </div>
+      <div class="service-item">
+        <img src="spa.jpeg" class="spa" alt="Spa">
+        <h3>Spa</h3>
+        <p>Relax and rejuvenate with our luxurious spa treatments.</p>
+      </div>
+      <div class="service-item">
+        <img src="pool.jpeg" class="pl" alt="Swimming Pool">
+        <h3>Swimming Pool</h3>
+        <p>Take a dip and unwind in our serene swimming pool.</p>
+      </div>
+      <div class="service-item">
+        <img src="wifi.jpeg" class="wf" alt="Free Wi-Fi">
+        <h3>Free Wi-Fi</h3>
+        <p>Stay connected with high-speed internet available throughout the hotel.</p>
+      </div>
+      <!-- Add more amenities as needed -->
+    </div>
+  </div>
+</section>
+
+<!-- Testimonials -->
+<section id="testimonials" class="testimonials">
+  <div class="container">
+    <h2>What Our Guests Say</h2>
+    <div class="testimonial-grid">
+      <div class="testimonial">
+        <p>"Amazing experience! The rooms were clean and the service was excellent."</p>
+        <h4>- John Doe</h4>
+      </div>
+      <div class="testimonial">
+        <p>"The food was delicious and the ambiance was perfect for a relaxing getaway."</p>
+        <h4>- Jane Smith</h4>
+      </div>
+      <div class="testimonial">
+        <p>"Great value for money. Will definitely be coming back!"</p>
+        <h4>- Emily Johnson</h4>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Contact -->
+<section id="contact" class="contact-info">
+  <div class="container">
+    <h2>Contact Us</h2>
+    <p class="address">123 Fine Dining Street, Gourmet City, FL 12345</p>
+    <p class="phone">Phone: (123) 456-7890</p>
+    <p class="email">Email: contact@mahalhotel.com</p>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  <p>&copy; 2024 Fictional Fine Dining Restaurant Mahal Hotel. All rights reserved.</p>
+</footer>
+
+</body>
+</html>

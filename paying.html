@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mahal Booking Form</title>
+  <style>
+    /* General styles */
+    body {
+      font-family: Arial, sans-serif;
+      background-image: url("payment.jpeg"); /* Replace with your image URL */
+      background-size: cover;
+      background-position: center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      padding: 0;
+    }
+
+    /* Form container */
+    form {
+      background-color: rgba(255, 255, 255, 0.9);
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      max-width: 400px;
+      width: 100%;
+    }
+
+    /* Form elements */
+    label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: bold;
+    }
+
+    input[type="text"],
+    input[type="radio"],
+    button {
+      width: 100%;
+      padding: 10px;
+      margin: 8px 0;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+      box-sizing: border-box;
+    }
+
+    input[type="radio"] {
+      width: auto;
+      margin-right: 10px;
+    }
+
+    button {
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    button:hover {
+      background-color: #45a049;
+    }
+
+    .payment-method label {
+      display: inline-block;
+      margin-right: 15px;
+    }
+
+    .card-details, .upi-details {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Booking Form -->
+  <form action="conformation.html" method="post">
+
+    <!-- Payment Method -->
+    <div class="payment-method">
+      <label for="card">
+        <input type="radio" id="card" name="payment-method" value="card" onclick="togglePaymentDetails()" required>
+        Credit/Debit Card
+      </label>
+      <label for="upi">
+        <input type="radio" id="upi" name="payment-method" value="upi" onclick="togglePaymentDetails()" required>
+        UPI
+      </label>
+    </div>
+  
+    <!-- Card Payment Details -->
+    <div class="card-details">
+      <label for="cardnumber">Card Number:</label>
+      <input type="text" id="cardnumber" name="cardnumber" placeholder="Enter your card number" required>
+  
+      <label for="expdate">Expiration Date:</label>
+      <input type="text" id="expdate" name="expdate" placeholder="MM/YY" required>
+  
+      <label for="cvv">CVV:</label>
+      <input type="text" id="cvv" name="cvv" placeholder="Enter CVV" required>
+    </div>
+  
+    <!-- UPI Payment Details -->
+    <div class="upi-details">
+      <label for="upi id">UPI ID:</label>
+      <input type="text" id="upi id" name="upiid" placeholder="Enter your UPI ID"/>
+    </div>
+  
+    <button type="submit">Submit Booking</button>
+  </form>
+
+  <!-- JavaScript to toggle between payment methods -->
+  <script>
+    function togglePaymentDetails() {
+      var cardDetails = document.querySelector('.card-details');
+      var upiDetails = document.querySelector('.upi-details');
+      
+      var selectedPayment = document.querySelector('input[name="payment-method"]:checked').value;
+  
+      if (selectedPayment === 'card') {
+        cardDetails.style.display = 'block';
+        upiDetails.style.display = 'none';
+      } else if (selectedPayment === 'upi') {
+        cardDetails.style.display = 'none';
+        upiDetails.style.display = 'block';
+      }
+      else{
+        alert("Payment is not successful");
+      }
+    }
+  </script>
+
+</body>
+</html>
